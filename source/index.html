@@ -33,6 +33,19 @@
     href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
     rel="stylesheet">
 
+
+    <style>
+      /* Add your existing styles here */
+      /* Add this to your CSS file */
+      .sticky-header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000; /* Ensure it appears above other elements */
+        background-color: white; /* Or any background color matching your nav */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: add a shadow for better visibility */
+      }
+    </style>
 </head>
 
 <body>
@@ -139,7 +152,7 @@
         </div>
       </div>
     </nav>
-
+  
     <nav id="primary-header" class="navbar navbar-expand-lg py-3 px-xl-5">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
@@ -159,7 +172,7 @@
           <div class="offcanvas-body align-items-center justify-content-end">
             <ul class="navbar-nav mb-2 mb-lg-0">
               <li class="nav-item px-3 py-3 py-lg-0">
-                <a class="nav-link active p-0" aria-current="page" href="index.html">Home</a>
+                <a class="nav-link p-0" aria-current="page" href="index.html">Home</a>
               </li>
               <li class="nav-item px-3 py-3 py-lg-0">
                 <a class="nav-link p-0" href="#about">About</a>
@@ -167,7 +180,6 @@
               <li class="nav-item px-3 py-3 py-lg-0">
                 <a class="nav-link p-0" href="#our-services">Services</a>
               </li>
-              
               <li class="nav-item px-3 py-3 py-lg-0">
                 <a class="nav-link p-0" href="#contact">Contact</a>
               </li>
@@ -177,6 +189,21 @@
       </div>
     </nav>
   </header>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var primaryHeader = document.getElementById("primary-header");
+      var headerTopHeight = document.querySelector(".header-top").offsetHeight;
+
+      window.addEventListener("scroll", function() {
+        if (window.scrollY >= headerTopHeight) {
+          primaryHeader.classList.add("sticky-header");
+        } else {
+          primaryHeader.classList.remove("sticky-header");
+        }
+      });
+    });
+  </script>
 
   <section id="billboard" class="jarallax"
     style="background-image: url(images/slider-image.jpg); background-size: cover; background-repeat: no-repeat; height: 80vh; background-position: center"
@@ -196,8 +223,7 @@
             <img src="images/product1.jpg" class=" post-image img-fluid rounded-2">
             <div class="product-description position-absolute p-3">
               <h3 class="mb-2 text-white">New Builds</h3>
-              <p class="product-paragraph m-0 text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Molestiae at illum ipsum similique doloribus.</p>
+              <p class="product-paragraph m-0 text-white">We offer comprehensive new build services, ensuring high-quality construction from start to finish.</p>
               <a href="#contact">
                 <p class="text-decoration-underline text-white m-0 mt-2">Enquire Now</p>
               </a>
@@ -209,8 +235,7 @@
             <img src="images/product2.jpg" class=" post-image img-fluid rounded-2">
             <div class="product-description position-absolute p-3">
               <h3 class="mb-2 text-white">Repairs & Renovations</h3>
-              <p class="product-paragraph m-0 text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Molestiae at illum ipsum similique doloribus.</p>
+              <p class="product-paragraph m-0 text-white">Our expert team handles all types of repairs and renovations to restore and enhance your property.</p>
               <a href="#contact">
                 <p class="text-decoration-underline text-white m-0  mt-2">Enquire Now</p>
               </a>
@@ -222,8 +247,7 @@
             <img src="images/product3.jpg" class=" post-image img-fluid rounded-2">
             <div class="product-description position-absolute p-3">
               <h3 class="mb-2 text-white">Lofts & Extensions</h3>
-              <p class="product-paragraph m-0 text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Molestiae at illum ipsum similique doloribus.</p>
+              <p class="product-paragraph m-0 text-white">Expand your living space with our loft conversion and extension services, tailored to your needs.</p>
               <a href="#contact">
                 <p class="text-decoration-underline text-white m-0  mt-2">Enquire Now</p>
               </a>
@@ -235,8 +259,7 @@
             <img src="images/product4.jpg" class=" post-image img-fluid rounded-2">
             <div class="product-description position-absolute p-3">
               <h3 class="mb-2 text-white">Bespoke Woodwork</h3>
-              <p class="product-paragraph m-0 text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Molestiae at illum ipsum similique doloribus.</p>
+              <p class="product-paragraph m-0 text-white">Our bespoke woodwork services offer custom-made solutions to add unique charm to your space.</p>
               <a href="#contact">
                 <p class="text-decoration-underline text-white m-0  mt-2">Enquire Now</p>
               </a>
@@ -252,6 +275,7 @@
       </div>
     </div>
   </section>
+
 
   <section id="about" class="bg-gray padding-small">
     <div class="container">

@@ -437,7 +437,7 @@ transform: scale(1.1);
 }
 
 .product-description{
-  bottom: -125px;
+  bottom: -100px;
   transition: all 0.5s ease-in-out;
 }
 
@@ -449,11 +449,36 @@ bottom: 10px;
   font-size: 0.8rem;
 }
 
-@media only screen and (min-width:770px) and (max-width: 1400px) {
+@media only screen and (min-width: 0px) and (max-width: 397px) {
+  .product-description{
+    bottom: -125px;
+  }
+}
+
+
+@media only screen and (min-width: 770px) and (max-width: 993px) {
+  .product-description{
+    bottom: -125px;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
   .product-description{
     bottom: -180px;
   }
 }
+
+@media only screen and (min-width: 1201px) and (max-width: 1400px) {
+  .product-description{
+    bottom: -155px;
+  }
+} 
+
+@media only screen and (min-width: 1401px) {
+  .product-description{
+    bottom: -130px;
+  }
+} 
 
 /* 4.4 About Us 
 /*----------------------------------------------*/
